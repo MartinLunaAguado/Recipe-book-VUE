@@ -17,7 +17,7 @@
   </template>
   
   <script setup lang="ts">
-  import type { Recipe } from '@/stores/recipe';
+  import type { Recipe } from '@/stores/recipe.ts';
   import { RouterLink } from 'vue-router';
   defineProps<{
     recipes: Recipe[]
