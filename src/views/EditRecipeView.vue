@@ -13,7 +13,7 @@
       </button>
     </form>
   </template>
-  
+
   <script setup lang="ts">
   import { useRecipeStore } from '@/stores/recipe';
   import { onMounted, ref } from 'vue';
@@ -21,10 +21,10 @@
   const store = useRecipeStore();
   const router = useRouter();
   const route = useRoute();
-  
+
   const name = ref('');
   const description = ref('');
-  
+
   const fetchRecipe = () => {
     const id = route.params.id as string;
     const recipe = store.getRecipeById(id);
@@ -32,12 +32,12 @@
       name.value = recipe.name;
       description.value = recipe.description;
     } else {
-      router.push({ name: 'not-found' })
+      router.push({ name: 'not-found', query: { invalidId: id } })
     }
   }
-  
+
   onMounted(fetchRecipe);
-  
+
   const updateRecipe = () => {
     store.editRecipe({
       id: route.params.id as string,

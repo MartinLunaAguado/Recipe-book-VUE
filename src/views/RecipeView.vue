@@ -19,12 +19,23 @@
 
 <script setup lang="ts">
 import { useRecipeStore } from '@/stores/recipe';
-import { computed } from 'vue';
-import { RouterLink, useRoute } from 'vue-router';
+import { computed, onMounted } from 'vue';
+import { RouterLink, useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
 const recipeStore = useRecipeStore();
+const router = useRouter();
 
 const recipe = computed(() => recipeStore.getRecipeById(route.params.id as string));
+
+onMounted(() => {
+  const invalidId = route.params.id as string;
+  console.log('Invalid ID:', invalidId); // Depuración: verifica el valor del ID
+
+  if (!recipe.value) {
+    // Si el ID no es válido, redirige a la página de error con el ID incorrecto
+    router.push({ name: 'not-found', query: { invalidId } });
+  }
+});
 const isFavorite = computed(() => (recipe.value ? recipeStore.isFavorite(recipe.value.id) : false));
 </script>

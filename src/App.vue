@@ -3,7 +3,7 @@
     <nav>
       <ul class="flex gap-4 p-8 bg-orange-200 text-orange-800">
         <li>
-          <RouterLink :to="{ name: 'home' }" class="hover:underline">Home</RouterLink>
+          <RouterLink :to="{ name: 'home', query:{ id: 1} }" class="hover:underline">Home</RouterLink>
         </li>
         <li>
           <RouterLink :to="{ name: 'favorites' }" class="hover:underline">Favorites</RouterLink>

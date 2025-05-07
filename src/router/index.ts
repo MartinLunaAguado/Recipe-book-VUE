@@ -44,7 +44,8 @@ const router = createRouter({
     {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
-      component: NotFoundView
+      component: NotFoundView,
+     // props:true  // Permite pasar parámetros como props al componente
     }
   ]
 });
