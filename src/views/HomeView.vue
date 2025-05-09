@@ -1,11 +1,11 @@
 <template>
   <main>
     <h1 class="text-2xl font-bold mb-4">Recipe Book</h1>
-    <p>Category: {{ category }}</p>
-
-    <div>
+   <div>
+    <ul class="flex items-center justify-between bg-orange-600 text-white p-4 shadow-lg">
+    <span>Category: {{ category }}</span>
       <input type="text" placeholder="Seach recipes..." v-model="searchQuery" class="p-2 border rounded mb-4 w-full" />
-    </div>
+   </ul> </div>
     <RecipeList :recipes="filteredRecipes" />
   </main>
 </template>
