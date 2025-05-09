@@ -4,9 +4,5 @@
 
 body {
   background: linear-gradient(to bottom, #fef3c7, #fde68a);
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: all 0.3s ease-in-out;
+ font-family: Georgia, 'Times New Roman', Times, serif;
 }

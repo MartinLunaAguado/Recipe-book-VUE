@@ -1,10 +1,10 @@
 <template>
   <header>
-    <nav class="flex items-center  bg-orange-600 text-white p-4 shadow-lg">
+    <nav class="  bg-orange-600 text-white p-4 shadow-lg">
       <div class="text-2xl font-bold">
-        <RouterLink :to="{ name: 'home' }" class="hover:text-orange-200">🍴 Recipe Book</RouterLink>
+        <RouterLink :to="{ name: 'home' }" class="hover:text-orange-200 hover:underline" >🍴 RECIPE BLOG</RouterLink>
       </div>
-      <ul class="grid grid-flow gap-18 bg-orange-600 text-white p-4 shadow-lg ">
+      <ul class="flex gap-18 items-center justify-between bg-orange-600 text-white p-4 shadow-lg ">
         <li>
           <RouterLink :to="{ name: 'home' }" class="hover:underline">Home</RouterLink>
         </li>
